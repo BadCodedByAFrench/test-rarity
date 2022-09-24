@@ -21,6 +21,6 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
             }
           `;
    
-export const getPrice = async() => { const datatoreturn = request('OBJKT_API_URL', query).then((data) => console.log(data)); return data; }
+export const getPrice = async() => { const datatoreturn = request('OBJKT_API_URL', query).then((data) => console.log(data)); return datatoreturn; }
 
 
