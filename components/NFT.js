@@ -27,7 +27,7 @@ export const NFT = (nft) => {
           <h3 className="text-xs text-gray-600">#{nft.id}</h3>
         </div>
          <div className="rounded-b-md py-2 px-2">
-          <h3 className="text-xs text-gray-600">#{nft.price}</h3>
+          <h3 className="text-xs text-gray-600">Price: {nft.price}</h3>
         </div>
       </a>
     </>
