@@ -24,7 +24,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
    
 const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
-export const getPrice = async (nft) { 
+export const getPrice => async (nft) { 
   const result = graphQlClient.request(query).then((data) => 
                                                    {
                                                       console.log(data)
