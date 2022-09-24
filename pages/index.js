@@ -10,7 +10,6 @@ import { TraitFilters } from "../components/TraitFilters";
 import { Footer } from "../components/Footer";
 import { config } from "../config";
 import { getFilters, getNFTs } from "../util/requests";
-import { getPrice } from "../util/requestsGraphQL.js";
 
 function Home({ title, img, description, nfts, pages, filters }) {
   const router = useRouter();
