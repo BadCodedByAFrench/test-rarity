@@ -12,12 +12,14 @@ import { config } from "../config";
 import { getFilters, getNFTs } from "../util/requests";
 import { getPrice } from "../util/requestsGraphQL.js";
 
-function Home({ title, img, description, nfts, pages, filters }) {
+function Home({ title, img, description, nfts, pages, filters,prices }) {
   const router = useRouter();
   const ref = createRef(null);
   const [showMenu, setShowMenu] = useState(false);
   const { all_traits, attr_count } = filters;
-
+  
+  console.log(prices);
+  
   return (
     <div
       className="flex flex-col items-center justify-center 
@@ -76,6 +78,7 @@ function Home({ title, img, description, nfts, pages, filters }) {
 Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
+  let prices = await getPrice(nfts)
   return {
     title: config.COLLECTION_TITLE,
     description: config.COLLECTION_DESCRIPTION,
@@ -83,6 +86,7 @@ Home.getInitialProps = async ({ query }) => {
     nfts,
     pages,
     filters,
+    prices,
   };
 };
 
