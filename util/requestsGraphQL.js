@@ -1,3 +1,4 @@
+import { getNFTs } from "../util/requests";
 import { request, gql, GraphQLClient  } from 'graphql-request'
 
 const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
