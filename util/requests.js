@@ -33,7 +33,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
 
 export const getPrice = async() => {
   const { data, isLoading, error } = useQuery("launches", () => {
-    return request(endpoint, FILMS_QUERY);
+    return request(OBJKT_API_URL, query);
   });
   return data;
  }
