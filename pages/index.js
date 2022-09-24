@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 import { TraitFilters } from "../components/TraitFilters";
 import { Footer } from "../components/Footer";
 import { config } from "../config";
-import { getFilters, getNFTs, useListedPrice } from "../util/requests";
+import { getFilters, getNFTs, getPrice } from "../util/requests";
 
 function Home({ title, img, description, nfts, pages, filters }) {
   const router = useRouter();
