@@ -15,7 +15,7 @@ const graphQLClient = new GraphQLClient(API_URL, {
   headers: {}
 });
 
-export function useListedPrice() {
+export const useListedPrice() = async () => {
   return useQuery("get-ListedPrice", async () => {
     const { getListedPrice } = await graphQLClient.request(gql`
       query {
