@@ -1,4 +1,4 @@
-import { request, gql } from 'graphql-request'
+import { request, gql, GraphQLClient  } from 'graphql-request'
 
 const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
 
@@ -21,6 +21,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
             }
           `;
    
-export const getPrice = async() => { return 5; }
+export const getPrice = new GraphQLClient(OBJKT_API_URL, { headers: {} })
+client.request(query).then((data) => console.log(data))
 
 
