@@ -26,12 +26,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
 const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
 export const getPrice = async () => { 
-  const result = graphQlClient.request(query).then(
-    (data) => 
-    {
-      console.log(data);
-    }
-  );
+  const result = graphQlClient.request(query);
   return result;
 }
 
