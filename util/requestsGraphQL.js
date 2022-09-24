@@ -29,4 +29,4 @@ export const getPrice = async () => {
   return result;
 }
 
-
+console.log(getPrice());
