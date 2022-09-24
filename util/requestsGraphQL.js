@@ -1,4 +1,3 @@
-import { getNFTs } from "../util/requests";
 import { request, gql, GraphQLClient  } from 'graphql-request'
 
 const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
@@ -25,15 +24,9 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
    
 const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
-export const getPrice = async () => { 
-  const result = graphQlClient.request(query).then((data) => 
-                                                   {
-                                                      let { nfts = [], pages } = getNFTs(query);
-                                                      console.log(nfts)
-                                                      console.log(data)
-                                                    }
-                                                  );
+export const getPrice = async (nfts) => { 
+  const result = await graphQlClient.request(query);
+  return result;
 }
 
 
-getPrice();
