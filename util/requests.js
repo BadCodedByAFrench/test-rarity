@@ -15,10 +15,8 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
   headers: {}
 });
 
-export const useListedPrice() = async () => {
-  return useQuery("get-ListedPrice", async () => {
-    const { data } = await graphQLClient.request(gql`
-         {
+    const query = gql`
+         query {
             listing(where: {fa_contract: {_eq: "KT1CwSgYmZewFazZsW348RAQYn1nthiGP3Qa"}, status: {_eq: "active"}}, order_by: {price: asc}) {
               fa_contract
               amount
@@ -30,10 +28,16 @@ export const useListedPrice() = async () => {
               }
               status
             }
-    `);
-    return data;
+          `;
+   
+
+export const getPrice = async() => {
+  const { data, isLoading, error } = useQuery("launches", () => {
+    return request(endpoint, FILMS_QUERY);
   });
-};
+  retrun data;
+ }
+
 
 
 
