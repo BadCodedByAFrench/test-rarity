@@ -34,7 +34,7 @@ export const useListedPrice() = async () => {
     `);
     return getListedPrice;
   });
-}
+};
 
 
 
