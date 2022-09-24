@@ -30,7 +30,7 @@ export const getPrice = async () => {
   return result;
 }
 
-  let newData = getPrice(query);
+  let newData = getPrice();
   console.log(newData);
 
 
