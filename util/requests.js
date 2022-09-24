@@ -1,5 +1,5 @@
 import axios from "axios";
-import { QueryClient } from "react-query";
+import { useQuery  } from "react-query";
 import { GraphQLClient, gql } from "graphql-request";
 import { json2query } from ".";
 import { config } from "../config";
