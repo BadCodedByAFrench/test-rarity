@@ -26,7 +26,6 @@
     "apollo-link-http": "^1.0.0",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
-    "react-apollo": "^2.0.0",
     "graphql-request" : "^5.0.0",
     "react-icons": "^4.2.0",
     "swr": "^1.0.0",
