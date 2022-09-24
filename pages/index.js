@@ -78,7 +78,7 @@ Home.getInitialProps = async ({ query }) => {
   let filters = await getFilters(query);
   let newData = await getPrice(query);
   console.log(newData);
-  
+  console.log("toto");
   return {
     title: config.COLLECTION_TITLE,
     description: config.COLLECTION_DESCRIPTION,
