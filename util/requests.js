@@ -1,6 +1,6 @@
 import axios from "axios";
 import { QueryClient } from "react-query";
-import { useQuery, gql } from '@apollo/client';
+import { GraphQLClient, gql } from "graphql-request";
 import { json2query } from ".";
 import { config } from "../config";
 
