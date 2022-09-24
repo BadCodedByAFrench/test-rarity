@@ -26,7 +26,7 @@ const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
 export const getPrice = async () => { 
   const result = await graphQlClient.request(query);
-  return result.PromiseResult;
+  return result;
 }
 
-console.log(getPrice());
+console.log( await getPrice());
