@@ -9,16 +9,16 @@ let basePath =
     ? `http://${config.LOCAL_API_URL}`
     : `https://${config.API_URL}`;
 
-const API_URL = `https://data.objkt.com/v2/graphql`;
+const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
 
-const graphQLClient = new GraphQLClient(API_URL, {
+const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
   headers: {}
 });
 
 export const useListedPrice() = async () => {
   return useQuery("get-ListedPrice", async () => {
-    const { getListedPrice } = await graphQLClient.request(gql`
-      query {
+    const { data } = await graphQLClient.request(gql`
+         {
             listing(where: {fa_contract: {_eq: "KT1CwSgYmZewFazZsW348RAQYn1nthiGP3Qa"}, status: {_eq: "active"}}, order_by: {price: asc}) {
               fa_contract
               amount
@@ -30,9 +30,8 @@ export const useListedPrice() = async () => {
               }
               status
             }
-          }
     `);
-    return getListedPrice;
+    return data;
   });
 };
 
