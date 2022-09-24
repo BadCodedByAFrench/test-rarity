@@ -1,5 +1,9 @@
 module.exports = {
-  experiments: {
-    topLevelAwait: true,
-  },
-};
+      webpack: {
+        configure: {
+          experiments: {
+              topLevelAwait: true
+          }
+        }
+      }
+}
