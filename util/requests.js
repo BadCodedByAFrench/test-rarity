@@ -35,7 +35,7 @@ export const getPrice = async() => {
   const { data, isLoading, error } = useQuery("launches", () => {
     return request(endpoint, FILMS_QUERY);
   });
-  retrun data;
+  return data;
  }
 
 
