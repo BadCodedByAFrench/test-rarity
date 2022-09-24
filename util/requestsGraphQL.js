@@ -28,7 +28,7 @@ export const getPrice = async (nfts) => {
   const result = await graphQlClient.request(query);
   
   const finalList = [];
-  result.map(function(aList) {
+  result.listing.map(function(aList) {
       const list = {};
       list.id = aList.token.token_id;
       list.price = aList.price;
