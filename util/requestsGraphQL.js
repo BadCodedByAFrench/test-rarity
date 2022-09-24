@@ -20,8 +20,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
     status
   }
 } 
-
-          `;
+`;
    
 const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
