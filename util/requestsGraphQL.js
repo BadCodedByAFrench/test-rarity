@@ -7,18 +7,20 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
 });
 
     const query = gql`
-         query {
-            listing(where: {fa_contract: {_eq: "KT1CwSgYmZewFazZsW348RAQYn1nthiGP3Qa"}, status: {_eq: "active"}}, order_by: {price: asc}) {
-              fa_contract
-              amount
-              price
-              token {
-                name
-                token_id
-                display_uri
-              }
-              status
-            }
+         query MyQuery {
+  listing(where: {fa_contract: {_eq: "KT1CwSgYmZewFazZsW348RAQYn1nthiGP3Qa"}, status: {_eq: "active"}}, order_by: {price: asc}) {
+    fa_contract
+    amount
+    price
+    token {
+      name
+      token_id
+      display_uri
+    }
+    status
+  }
+} 
+
           `;
    
 export const getPrice = new GraphQLClient(OBJKT_API_URL, { headers: {} })
