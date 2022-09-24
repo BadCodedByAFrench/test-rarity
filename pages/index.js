@@ -80,7 +80,7 @@ Home.getInitialProps = async ({ query }) => {
   let filters = await getFilters(query);
   let prices = await getPrice(nfts)
   nfts.map((nft, idx) => (
-     console.log(nft)    
+     nft.price = 0   
   ))
             
   return {
