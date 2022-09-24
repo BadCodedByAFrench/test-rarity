@@ -1,5 +1,4 @@
-import { useQuery  } from "react-query";
-import { request, gql } from "graphql-request";
+import { request, gql } from 'graphql-request'
 
 const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
 
@@ -22,10 +21,6 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
             }
           `;
    
+export const getPrice = request('OBJKT_API_URL', query).then((data) => console.log(data))
 
-export const getPrice = async() => {
-  const { data, isLoading, error } = useQuery("launches", () => {
-    return request(OBJKT_API_URL, query);
-  });
-  return data;
- }
+
