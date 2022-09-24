@@ -24,14 +24,15 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
    
 const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
-export const getPrice = async (nfts) => { 
+export const getPrice = async () => { 
   const result = graphQlClient.request(query).then((data) => 
                                                    {
+                                                      let { nfts = [], pages } = await getNFTs(query);
                                                       console.log(nfts)
                                                       console.log(data)
                                                     }
                                                   );
 }
 
-let { nfts = [], pages } = await getNFTs(query);
-getPrice(nfts);
+
+getPrice();
