@@ -32,4 +32,4 @@ export const getPrice = async (nft) {
                                                   );
 }
 
-console.log( getPrice());
+getPrice();
