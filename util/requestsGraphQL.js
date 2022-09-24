@@ -29,7 +29,7 @@ export const getPrice = async (nfts) => {
   
   const finalList = [];
   result.map(function(aList) {
-      const list;
+      const list = {};
       list.id = aList.token.token_id;
       list.price = aList.price;
       finalList.push(list);
