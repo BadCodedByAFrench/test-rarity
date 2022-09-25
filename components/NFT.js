@@ -3,7 +3,7 @@ import React from "react";
 export const NFT = (nft) => {
   console.log(nft);
   
-  const currency = "";
+  let currency = "";
   if(nft.price != "Not to sale"){
     currency = " XTZ"
   }
