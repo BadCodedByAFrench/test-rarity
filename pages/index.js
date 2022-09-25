@@ -86,7 +86,7 @@ Home.getInitialProps = async ({ query }) => {
     nfts,
     pages,
     filters,
-  };,
+  };
 };
 
 export default Home;
