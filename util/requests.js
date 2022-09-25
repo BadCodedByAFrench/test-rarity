@@ -37,11 +37,3 @@ export const getNFTInfo = async (id) => {
   return data;
 };
 
-export const getNFTPrice = async (id) => {
-  const res = await fetch(
-    `https://ipfs.io/ipfs/QmSawZEASXSak5HrhxrKH5YH2fBmshZE3gkU6zxBcBuSm7/${id}.json`
-  );
-  const data = await res.json();
-  return data;
-};
-
