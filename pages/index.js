@@ -76,7 +76,7 @@ function Home({ title, img, description, nfts, pages, filters }) {
 Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
-  const timer = setInterval(()=> console.log("test"), 1000)
+  const timer = setInterval(()=> console.log("test2"), 1000)
   let prices = await getPrice(nfts);  
 
   return {
