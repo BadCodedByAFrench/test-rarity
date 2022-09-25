@@ -48,6 +48,8 @@ export const getPrice = async (nfts) => {
     })
   console.log("Price update");
   console.log(nfts);
+  console.log(finalList);
+  console.log(result);
   return 1;
 }
 
