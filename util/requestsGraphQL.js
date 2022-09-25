@@ -39,7 +39,7 @@ export const getPrice = async (nfts) => {
      nft.price = "Not to sale";
      
       finalList.map(function(aPrice) {
-        if(aPrice.id == nft.id.toString(10)){
+        if(parseInt(aPrice.id,10) == nft.id){
           nft.price = aPrice.price;
         }
         })
