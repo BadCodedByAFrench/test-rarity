@@ -78,8 +78,7 @@ Home.getInitialProps = async ({ query }) => {
   let filters = await getFilters(query);
   
   await getPrice(nfts);
-  const timer = setInterval(()=> getPrice(nfts), 60*5*1000);
-
+  
   return {
     title: config.COLLECTION_TITLE,
     description: config.COLLECTION_DESCRIPTION,
