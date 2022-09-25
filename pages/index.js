@@ -84,7 +84,7 @@ Home.getInitialProps = async ({ query }) => {
      nft.price = "Not to sale";
      
       prices.map(function(aPrice) {
-        if(aPrice.id == nfts.id.toString(10)){
+        if(aPrice.id == nft.id.toString(10)){
           nft.price = aPrice.price;
         }
         })
