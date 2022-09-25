@@ -18,8 +18,6 @@ function Home({ title, img, description, nfts, pages, filters,prices }) {
   const [showMenu, setShowMenu] = useState(false);
   const { all_traits, attr_count } = filters;
   
-  console.log(prices);
-  
   return (
     <div
       className="flex flex-col items-center justify-center 
@@ -78,6 +76,7 @@ function Home({ title, img, description, nfts, pages, filters,prices }) {
 Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
+  const timer = setInterval(()=> console.log("test"), 1000)
   let prices = await getPrice(nfts)
   
   nfts.map(function(nft) {
