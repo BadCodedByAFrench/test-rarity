@@ -12,7 +12,7 @@ import { config } from "../config";
 import { getFilters, getNFTs } from "../util/requests";
 import { getPrice } from "../util/requestsGraphQL.js";
 
-function Home({ title, img, description, nfts, pages, filters,prices }) {
+function Home({ title, img, description, nfts, pages, filters }) {
   const router = useRouter();
   const ref = createRef(null);
   const [showMenu, setShowMenu] = useState(false);
@@ -77,18 +77,7 @@ Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
   const timer = setInterval(()=> console.log("test"), 1000)
-  let prices = await getPrice(nfts)
-  
-  nfts.map(function(nft) {
-     nft.price = "Not to sale";
-     
-      prices.map(function(aPrice) {
-        if(aPrice.id == nft.id.toString(10)){
-          nft.price = aPrice.price;
-        }
-        })
-    })
-        
+  let prices = await getPrice(nfts);  
 
   return {
     title: config.COLLECTION_TITLE,
@@ -97,8 +86,7 @@ Home.getInitialProps = async ({ query }) => {
     nfts,
     pages,
     filters,
-    prices,
-  };
+  };,
 };
 
 export default Home;
