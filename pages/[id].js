@@ -87,7 +87,7 @@ function NFT({ nft, title }) {
 
             <a
               className="py-4 px-2 flex text-center w-full items-center justify-center mt-4 bg-blue-100 text-blue-500"
-              href={`https://objkt.com/collection/goddezz/${nft.id}`}
+              href={`https://objkt.com/collection/mutantgeckogang/${nft.id}`}
               target="_blank"
             >
               See on OBJKT
