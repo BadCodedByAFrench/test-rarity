@@ -8,7 +8,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
 
     const query = gql`
          query MyQuery {
-  listing(where: {fa_contract: {_eq: "KT1CwSgYmZewFazZsW348RAQYn1nthiGP3Qa"}, status: {_eq: "active"}}, order_by: {price: asc}) {
+  listing(where: {fa_contract: {_eq: "KT1PfSzijPDq9DfuZrNjQcvdnz1WudP6D68e"}, status: {_eq: "active"}}, order_by: {price: asc}) {
     fa_contract
     amount
     price
