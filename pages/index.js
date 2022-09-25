@@ -76,7 +76,9 @@ function Home({ title, img, description, nfts, pages, filters }) {
 Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
-  const timer = setInterval(()=> await getPrice(nfts), 1000);
+  
+  await getPrice(nfts);
+  const timer = setInterval(()=> getPrice(nfts), 60*5*1000);
 
   return {
     title: config.COLLECTION_TITLE,
