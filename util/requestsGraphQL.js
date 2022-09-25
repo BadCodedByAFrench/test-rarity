@@ -38,8 +38,8 @@ export const getPrice = async (nfts) => {
   return finalList;
 }
 
- componentDidMount(){
-  this.timer = setInterval(()=> console.log("test"), 1000)
- }
+
+ const timer = setInterval(()=> console.log("test"), 1000)
+
 
 
