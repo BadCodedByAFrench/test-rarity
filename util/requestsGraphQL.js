@@ -35,11 +35,21 @@ export const getPrice = async (nfts) => {
       finalList.push(list);
     })
   
-  return finalList;
+  nfts.map(function(nft) {
+     nft.price = "Not to sale";
+     
+      finalList.map(function(aPrice) {
+        if(aPrice.id == nft.id.toString(10)){
+          nft.price = aPrice.price;
+        }
+        })
+    })
+  
+  return 1;
 }
 
 
- const timer = setInterval(()=> console.log("test"), 1000)
+
 
 
 
