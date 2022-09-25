@@ -41,10 +41,13 @@ export const getPrice = async (nfts) => {
       finalList.map(function(aPrice) {
         if(parseInt(aPrice.id,10) == nft.id){
           nft.price = aPrice.price;
+           console.log(nft.id + " " + aPrice.id );
+           console.log(nft);
         }
         })
     })
   console.log("Price update");
+  console.log(nfts);
   return 1;
 }
 
