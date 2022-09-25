@@ -2,7 +2,12 @@ import React from "react";
 
 export const NFT = (nft) => {
   console.log(nft);
-  const value : nft != "Not to sale" ? " XTZ", "";
+  
+  const currency = "";
+  if(nft.price != "Not to sale"){
+    currency = " XTZ"
+  }
+  
   return (
     <>
       <a
@@ -28,7 +33,7 @@ export const NFT = (nft) => {
           <h3 className="text-xs text-gray-600">#{nft.id}</h3>
         </div>
          <div className="rounded-b-md py-2 px-2">
-          <h3 className="text-xs text-gray-600">Price: {nft.price}{value}</h3>
+          <h3 className="text-xs text-gray-600">Price: {nft.price}{currency}</h3>
         </div>
       </a>
     </>
