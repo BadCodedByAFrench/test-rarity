@@ -41,11 +41,11 @@ export const getPrice = async (nfts) => {
       finalList.push(list);
     })
   
-  if (result.listing.length == 500){
+  /*if (result.listing.length == 500){
       const resultFromLoop = await getPrice(nfts);
       finalList.concat(resultFromLoop);
   }
-  else{
+  else{*/
       nfts.map(function(nft) {
       nft.price = "Not to sale";
      
@@ -56,7 +56,7 @@ export const getPrice = async (nfts) => {
         })
     })
     console.log("Price update");
-  }
+  //}
   
 
   
