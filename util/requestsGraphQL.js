@@ -3,13 +3,15 @@ import { request, gql, GraphQLClient  } from 'graphql-request'
 
 const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
 
-let price = 0 
-
 const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
   headers: {}
 });
+   
+const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
-    let query = gql`
+export const getPrice = async (nfts, price) => { 
+  
+  let query = gql`
          query MyQuery {
   listing(where: {fa_contract: {_eq: "${config.COLLECTION_CONTRACT}"}, status: {_eq: "active"}, price: {_gt: "${price}"}}, order_by: {price: asc}) {
     fa_contract
@@ -24,25 +26,22 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
   }
 } 
 `;
-   
-const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
-
-export const getPrice = async (nfts) => { 
+  
   const result = await graphQlClient.request(query);
   
-  
+  let newprice = price;
   
   const finalList = [];
   result.listing.map(function(aList) {
       const list = {};
       list.id = aList.token.token_id;
       list.price = aList.price/1000000.0;
-      price = aList.price;
+      newprice = aList.price;
       finalList.push(list);
     })
   
   if (result.listing.length == 500){
-    const resultFromLoop = await getPrice(nfts);
+    const resultFromLoop = await getPrice(nfts, newprice);
       finalList.concat(resultFromLoop);
   }
   else{
