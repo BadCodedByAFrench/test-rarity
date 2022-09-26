@@ -9,7 +9,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
    
 const graphQlClient = new GraphQLClient(OBJKT_API_URL, { headers: {} })
 
-export const getPrice = async (nfts, price) => { 
+export const getPrice = async (nfts, price, firstloop) => { 
   
   let query = gql`
          query MyQuery {
@@ -41,10 +41,10 @@ export const getPrice = async (nfts, price) => {
     })
   
   if (result.listing.length == 500){
-    const resultFromLoop = await getPrice(nfts, newprice);
+    const resultFromLoop = await getPrice(nfts, newprice, false);
       finalList.concat(resultFromLoop);
   }
-  else{
+  if (firstloop){
       nfts.map(function(nft) {
       nft.price = "Not to sale";
      
