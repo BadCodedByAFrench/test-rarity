@@ -44,6 +44,7 @@ export const getPrice = async (nfts, price, firstloop) => {
     const resultFromLoop = await getPrice(nfts, newprice, false);
       finalList.concat(resultFromLoop);
     console.log("500");
+    console.log(resultFromLoop);
      console.log(finalList);
   }
   if (firstloop){
