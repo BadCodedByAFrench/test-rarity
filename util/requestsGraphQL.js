@@ -37,16 +37,15 @@ export const getPrice = async (nfts) => {
       const list = {};
       list.id = aList.token.token_id;
       list.price = aList.price/1000000.0;
-      price = list.price;
+      price = aList.price;
       finalList.push(list);
     })
   
   if (result.listing.length == 500){
-    console.log("test");
-    /*const resultFromLoop = await getPrice(nfts);
-      finalList.concat(resultFromLoop);*/
+    const resultFromLoop = await getPrice(nfts);
+      finalList.concat(resultFromLoop);
   }
-  /*else{*/
+  else{
       nfts.map(function(nft) {
       nft.price = "Not to sale";
      
@@ -57,7 +56,7 @@ export const getPrice = async (nfts) => {
         })
     })
     console.log("Price update");
-  //}
+  }
   
 
   
