@@ -31,7 +31,7 @@ export const getPrice = async (nfts, price, firstloop) => {
   
   let newprice = price;
   
-  const finalList = [];
+  let finalList = [];
   result.listing.map(function(aList) {
       const list = {};
       list.id = aList.token.token_id;
