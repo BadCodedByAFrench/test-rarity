@@ -41,11 +41,12 @@ export const getPrice = async (nfts) => {
       finalList.push(list);
     })
   
-  /*if (result.listing.length == 500){
-      const resultFromLoop = await getPrice(nfts);
-      finalList.concat(resultFromLoop);
+  if (result.listing.length == 500){
+    console.log("test");
+    /*const resultFromLoop = await getPrice(nfts);
+      finalList.concat(resultFromLoop);*/
   }
-  else{*/
+  /*else{*/
       nfts.map(function(nft) {
       nft.price = "Not to sale";
      
