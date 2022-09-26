@@ -1,3 +1,4 @@
+import { config } from "../config";
 import { request, gql, GraphQLClient  } from 'graphql-request'
 
 const OBJKT_API_URL = `https://data.objkt.com/v2/graphql`;
@@ -8,7 +9,7 @@ const graphQLClient = new GraphQLClient(OBJKT_API_URL, {
 
     const query = gql`
          query MyQuery {
-  listing(where: {fa_contract: {_eq: "KT1PfSzijPDq9DfuZrNjQcvdnz1WudP6D68e"}, status: {_eq: "active"}}, order_by: {price: asc}) {
+  listing(where: {fa_contract: {_eq: "${config.COLLECTION_CONTRACT}"}, status: {_eq: "active"}}, order_by: {price: asc}) {
     fa_contract
     amount
     price
