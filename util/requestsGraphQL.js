@@ -21,8 +21,12 @@ export const getPrice = async (nfts, price, firstloop) => {
       name
       token_id
       display_uri
+      holders {
+        holder_address
+      }
     }
     status
+    seller_address
   }
 } 
 `;
@@ -33,6 +37,9 @@ export const getPrice = async (nfts, price, firstloop) => {
   
   let finalList = [];
   result.listing.map(function(aList) {
+      console.log(aList.seller_address);
+      console.log(aList.token.holders[aList.token.holders.length - 1]);
+    
       const list = {};
       list.id = aList.token.token_id;
       list.price = aList.price/1000000.0;
