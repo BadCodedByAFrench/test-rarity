@@ -77,7 +77,7 @@ Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
   
-  await getPrice(nfts,0);
+  await getPrice(nfts,0,true);
   
   return {
     title: config.COLLECTION_TITLE,
