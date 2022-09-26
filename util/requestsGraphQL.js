@@ -60,7 +60,7 @@ export const getPrice = async (nfts, price, firstloop) => {
 
   
   
-  return result.listing;
+  return finalList;
 }
 
 
