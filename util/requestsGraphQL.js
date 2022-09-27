@@ -116,7 +116,7 @@ export const getPriceV2 = async (price, firstloop) => {
     })
   
   if (result.listing.length == 500){
-    const resultFromLoop = await getPrice(newprice, false);
+    const resultFromLoop = await getPriceV2(newprice, false);
     finalList = finalList.concat(resultFromLoop);
   }
   if (firstloop){
