@@ -11,6 +11,7 @@ import { Footer } from "../components/Footer";
 import { config } from "../config";
 import { getFilters, getNFTs } from "../util/requests";
 import { getPrice } from "../util/requestsGraphQL.js";
+import { allPrices } from "./_app.js";
 
 function Home({ title, img, description, nfts, pages, filters }) {
   const router = useRouter();
@@ -78,6 +79,7 @@ Home.getInitialProps = async ({ query }) => {
   let filters = await getFilters(query);
   
   await getPrice(nfts,0,true);
+  console.log (allPrices); 
   
   return {
     title: config.COLLECTION_TITLE,
