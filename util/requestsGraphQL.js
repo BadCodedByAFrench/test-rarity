@@ -77,6 +77,10 @@ export const getPrice = async (nfts, price, firstloop) => {
 export let allThePrices = [];
 export let firstQuery = true;
 
+export const changeFirstQueryState = function(){
+  firstQuery = false;
+}
+
 
 export const getPriceV2 = async (price, firstloop) => { 
   
