@@ -74,7 +74,7 @@ export const getPrice = async (nfts, price, firstloop) => {
 
 
 
-
+export let allThePrices = [];
 
 
 export const getPriceV2 = async (price, firstloop) => { 
@@ -121,6 +121,7 @@ export const getPriceV2 = async (price, firstloop) => {
   }
   if (firstloop){
     console.log("Price update test loop");
+    allThePrices = finalList;
   }
   
 
