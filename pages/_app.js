@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css'
 import { getPriceV2 } from "../util/requestsGraphQL.js";
 
 function MyApp({ Component, pageProps }) {
-  await getPriceV2(0, true);
+  
   return <Component {...pageProps} />
 }
 
