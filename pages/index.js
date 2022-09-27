@@ -10,7 +10,7 @@ import { TraitFilters } from "../components/TraitFilters";
 import { Footer } from "../components/Footer";
 import { config } from "../config";
 import { getFilters, getNFTs } from "../util/requests";
-import { getPrice , allThePrices, firstQuery} from "../util/requestsGraphQL.js";
+import { getPrice , allThePrices, firstQuery, changeFirstQueryState} from "../util/requestsGraphQL.js";
 
 function Home({ title, img, description, nfts, pages, filters }) {
   const router = useRouter();
@@ -81,7 +81,7 @@ Home.getInitialProps = async ({ query }) => {
   
   if (firstQuery){
     await getPriceV2(0, true);
-    firstQuery = false;
+    changeFirstQueryState();
   }
 
    nfts.map(function(nft) {
