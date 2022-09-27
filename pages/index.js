@@ -77,8 +77,6 @@ Home.getInitialProps = async ({ query }) => {
   let { nfts = [], pages } = await getNFTs(query);
   let filters = await getFilters(query);
   
-  //await getPrice(nfts,0,true);
-  
   if (firstQuery){
     await getPriceV2(0, true);
     changeFirstQueryState();
